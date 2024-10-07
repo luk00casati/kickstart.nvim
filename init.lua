@@ -90,7 +90,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-local THEME = "rose-pine"
+local THEME = "oxocarbon"
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -452,7 +452,10 @@ require('lazy').setup({
 		name = "rose-pine",
 		priority = 1000,
 	},
-  -- Highlight todo, notes, etc in comments
+  {'nyoom-engineering/oxocarbon.nvim', priority = 1000},
+  { "ellisonleao/gruvbox.nvim", priority = 1000 },
+  { "rebelot/kanagawa.nvim", priority = 1000 },
+-- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- lsp
   {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
@@ -582,6 +585,7 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({}),
 })
 
+vim.o.background = 'dark'
 vim.cmd.colorscheme(THEME)
 vim.cmd.hi 'Comment gui=none'
 
